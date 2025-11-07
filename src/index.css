@@ -1,0 +1,175 @@
+css 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:wght@300;400;500;700&family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Lucent.AI Design System - Squarespace Compatible
+Brand Colors: Deep Midnight Blue (#0D1B2A), Lucent Cyan (#00C4FF), Pure White, Graphite Gray (#2F3E46), Soft Silver (#D9E2EC)
+Typography: Montserrat Bold (headings), Lora (body), Open Sans Light Italic (taglines)
+Theme: Clean, embeddable, Squarespace-style sections
+*/
+
+@layer base {
+  :root {
+    /* Lucent.AI Brand Colors - Exact Hex Values */
+    --background: 0 0% 100%; /* Pure White #FFFFFF */
+    --foreground: 210 45% 15%; /* Deep Midnight Blue #0D1B2A */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 210 45% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 45% 15%;
+    
+    --primary: 210 45% 15%; /* Deep Midnight Blue #0D1B2A */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 210 20% 85%; /* Soft Silver #D9E2EC */
+    --secondary-foreground: 210 45% 15%;
+    
+    --muted: 210 15% 95%;
+    --muted-foreground: 210 25% 35%; /* Graphite Gray #2F3E46 */
+    
+    --accent: 195 100% 50%; /* Lucent Cyan #00C4FF */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 210 20% 85%;
+    --input: 210 20% 85%;
+    --ring: 195 100% 50%;
+    
+    --radius: 1rem; /* 2xl rounded corners */
+    
+    /* Squarespace-style Gradients and Effects */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+    --gradient-cyan-glow: linear-gradient(135deg, hsl(195 100% 50% / 0.1) 0%, hsl(195 100% 50% / 0.05) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 99%) 100%);
+    
+    /* Shadows and Effects - Squarespace Style */
+    --shadow-button: 0 4px 14px 0 hsl(195 100% 50% / 0.2);
+    --shadow-card: 0 2px 10px -2px hsl(210 45% 15% / 0.1);
+    --shadow-section: 0 1px 3px 0 hsl(210 45% 15% / 0.05);
+    
+    /* Animations - Subtle */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.6;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Typography Classes - Squarespace Style */
+  .font-heading {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  .font-body {
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.6;
+  }
+  
+  .font-tagline {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+}
+
+/* Squarespace-Compatible Components */
+@layer components {
+  .section-hero {
+    @apply min-h-screen flex flex-col relative;
+    background: var(--gradient-hero);
+  }
+  
+  .section-standard {
+    @apply py-16 md:py-20 lg:py-24 relative;
+  }
+  
+  .section-alt {
+    @apply py-16 md:py-20 lg:py-24 relative;
+    background: var(--gradient-section);
+  }
+  
+  .header-bar {
+    @apply h-14 flex items-center justify-between px-4 sm:px-6 lg:px-8 relative z-50;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+  }
+  
+  .btn-primary {
+    @apply bg-accent hover:bg-accent/90 text-accent-foreground font-heading font-semibold px-6 py-3 rounded-2xl;
+    transition: var(--transition-glow);
+    box-shadow: var(--shadow-button);
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0 6px 20px 0 hsl(195 100% 50% / 0.4);
+    transform: translateY(-1px);
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-heading font-semibold px-6 py-3 rounded-2xl;
+    transition: var(--transition-smooth);
+  }
+  
+  .card-squarespace {
+    @apply bg-card border border-border/20 rounded-2xl p-6;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+  
+  .card-squarespace:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-section);
+  }
+  
+  .ai-circuit-motif {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(195 100% 50% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(195 100% 50% / 0.05) 0%, transparent 50%),
+      linear-gradient(45deg, transparent 48%, hsl(195 100% 50% / 0.03) 49%, hsl(195 100% 50% / 0.03) 51%, transparent 52%);
+    background-size: 100px 100px, 150px 150px, 50px 50px;
+  }
+  
+  .cyan-glow-text {
+    text-shadow: 0 0 20px hsl(195 100% 50% / 0.3);
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .footer-graphite {
+    background-color: #2F3E46;
+    color: #D9E2EC;
+  }
+  
+  .nav-link {
+    @apply text-primary hover:text-accent transition-colors font-heading text-sm font-medium;
+  }
+}
