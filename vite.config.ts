@@ -76,7 +76,7 @@ function cdnPrefixImages(): Plugin {
     code.replace(/url\((['"]?)([^'")]+)\1\)/g, (_m, q, p) => `url(${q}${toCDN(p, cdn)}${q})`);
 
   const rewriteJsxAst = (code: string, id: string, cdn: string) => {
-    const ast = parse(code, { sourceType: 'module', plugins: ['typescript', 'jsx'] });
+    //const ast = parse(code, { sourceType: 'module', plugins: ['typescript', 'jsx'] });
     let rewrites = 0;
 
     traverse(ast, {
