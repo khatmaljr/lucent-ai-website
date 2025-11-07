@@ -1,0 +1,22 @@
+typescript 
+import Header from '@/components/Header';
+import HeroSection from '@/components/HeroSection';
+import WhatWeDoSection from '@/components/WhatWeDoSection';
+import HowItWorksSection from '@/components/HowItWorksSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import AboutSection from '@/components/AboutSection';
+import FooterSection from '@/components/FooterSection';
+
+export default function Index() {
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <HeroSection />
+      <WhatWeDoSection />
+      <HowItWorksSection />
+      <TestimonialsSection />
+      <AboutSection />
+      <FooterSection />
+    </div>
+  );
+}
