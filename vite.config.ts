@@ -7,7 +7,7 @@ import nodePath from 'node:path';
 //import { componentTagger } from 'lovable-tagger';
 import path from "path";
 
-import { parse } from '@babel/parser';
+//import { parse } from '@babel/parser';
 import _traverse from '@babel/traverse';
 import _generate from '@babel/generator';
 import * as t from '@babel/types';
