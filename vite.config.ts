@@ -4,7 +4,7 @@ import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import fs from 'node:fs/promises';
 import nodePath from 'node:path';
-import { componentTagger } from 'lovable-tagger';
+//import { componentTagger } from 'lovable-tagger';
 import path from "path";
 
 import { parse } from '@babel/parser';
